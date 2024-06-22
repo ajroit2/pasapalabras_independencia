@@ -11,7 +11,7 @@ const questions = [
     {"letter": "J", "question": "Apellido de un integrante del Segundo Triunvirato. Antonio Alvarez .......", "answer": "Jonte"},
     {"letter": "L", "question": "Apellido de un integrante de la Primera Junta. Juan ......", "answer": "Larrea"},
     {"letter": "M", "question": "Apellido del secretario de la Primera Junta. Mariano...", "answer": "Moreno"},
-    {"letter": "N", "question": "Emperador de Francia, consquitador de España en 1808", "answer": "Napoleón"},
+    {"letter": "N", "question": "Emperador de Francia, consquitador de España en 1808", "answer": "Napoleon"},
     {"letter": "P", "question": "Apellido del Primer Director Supremo del Directorio. Gervasio Antonio de ...........", "answer": "Posadas"},
     {"letter": "R", "question": "Cuerpo militar creado por San Martín", "answer": "Regimiento"},
     {"letter": "S", "question": "Ciudad donde se ubicaba la Junta Central que decidió destituir a Liniers de su cargo de Virrey ", "answer": "Sevilla"},
@@ -99,7 +99,7 @@ function endGame() {
         currentQuestionIndex = 0;
         showQuestion();
     } else {
-        alert(`¡Juego terminado, ${playerName}! Tu puntaje final es: ${score} / ${questions.length}`);
+        alert(`¡Juego terminado, ${playerName}! Sos un verdadero patriota con un puntaje final de: ${score} / Fallaste: ${questions.length} respuestas`);
         location.reload();
     }
 }
