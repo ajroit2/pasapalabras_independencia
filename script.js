@@ -64,11 +64,16 @@ function showQuestion() {
     }
 }
 
+// Función para normalizar cadenas, eliminando las tildes
+function normalizeString(str) {
+    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
+}
+
 function submitAnswer() {
-    const answer = answerInput.value.trim().toLowerCase();
+    const answer = normalizeString(answerInput.value.trim());
     const question = questions[currentQuestionIndex];
 
-    if (answer === question.answer.toLowerCase()) {
+    if (answer === normalizeString(question.answer)) {
         alert('¡Correcto!');
         score++;
     } else {
@@ -80,7 +85,6 @@ function submitAnswer() {
     currentQuestionIndex++;
     showQuestion();
 }
-
 
 function skipQuestion() {
     const question = questions[currentQuestionIndex];
@@ -99,7 +103,7 @@ function endGame() {
         currentQuestionIndex = 0;
         showQuestion();
     } else {
-        alert(`¡Juego terminado, ${playerName}! Sos un verdadero patriota con un puntaje final de: ${score} / Fallaste: ${questions.length} respuestas`);
+        alert(`¡Juego terminado, ${playerName}! Sos un verdadero patriota con un puntaje final de: ${score} `);
         location.reload();
     }
 }
